@@ -1,0 +1,61 @@
+body {
+  margin: 0px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+.section {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.section-one {
+  background-color: #1F2937;
+  padding-top: 10px;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+
+
+}
+
+.content-left {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.header-logo {
+  color: white;
+  font-size: 24px;
+}
+
+.right-links {
+  display: flex;
+  gap: 10px;
+
+  font-size: 18px
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
