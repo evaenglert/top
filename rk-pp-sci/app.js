@@ -1,5 +1,6 @@
-console.log("Hello world!")
-console.log(computerPlay())
+let currentPointsPlayer = 0;
+let currentPointsComp = 0;
+const buttons = document.querySelectorAll('button');
 
 function computerPlay() {
   const array = ["Rock", "Paper", "Scissors"];
@@ -19,33 +20,50 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-function game(rounds = 5) {
-  currentPointsPlayer = 0
-  currentPointsComp = 0
-  for (let i = 0; i < rounds; i++) {
-    player = prompt("Please select between Rock, Paper, Scrissors!");
-    computer = computerPlay();
-    result = playRound(player, computer);
-
-    console.log(result);
-    if (result === "Player wins!") {
-      currentPointsPlayer += 1;
-    }
-    else {
-      currentPointsComp += 1;
-    }
-    console.log("Current Points - Player: " + currentPointsPlayer + " Computer: " + currentPointsComp);
-  }
-
-  if (currentPointsPlayer > currentPointsComp) {
-    console.log("Player won the whole game, congrats!!");
-  }
-  else if (currentPointsPlayer < currentPointsComp) {
-    console.log("Unfortunately the computer won the game! Try again!");
+const game = function(e, rounds = 5) {
+  let computerSelection = computerPlay();
+  result = playRound(e.target.className, computerSelection);
+  console.log(result);
+  if (result === "Player wins!") {
+    currentPointsPlayer++ ;
   }
   else {
-    console.log("Well this is a tie! Great game both!");
+    currentPointsComp++;
   }
+
+  console.log("Current Points - Player: " + currentPointsPlayer + " Computer: " + currentPointsComp);
+
+
+  if (currentPointsComp === 5 || currentPointsPlayer === 5) {
+    console.log("GAME END")
+    buttons.forEach(button => {
+      button.removeEventListener("click", game);
+    })
+
+    if (currentPointsPlayer > currentPointsComp) {
+      console.log("Player won the whole game, congrats!!");
+
+    }
+    else if (currentPointsPlayer < currentPointsComp) {
+      console.log("Unfortunately the computer won the game! Try again!");
+
+    }
+    else {
+      console.log("Well this is a tie! Great game both!");
+
+    }
+    console.log(this);
+
+    currentPointsPlayer = 0;
+    currentPointsComp = 0;
+
+  }
+
+
+
+
 }
 
-game()
+buttons.forEach(button => {
+  button.addEventListener("click", game)
+  })
