@@ -26,6 +26,7 @@ function game(rounds = 5) {
     player = prompt("Please select between Rock, Paper, Scrissors!");
     computer = computerPlay();
     result = playRound(player, computer);
+
     console.log(result);
     if (result === "Player wins!") {
       currentPointsPlayer += 1;
