@@ -1,0 +1,39 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px;
+}
+
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+  padding: 20px;
+
+  color: rgb(71, 71, 71);
+  background-color: pink;
+  font-size: 32px;
+
+}
+
+
+.container {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.player-side{
+  width: 50%;
+}
+
+
+.computer-side {
+  width: 50%;
+}
