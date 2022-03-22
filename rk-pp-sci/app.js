@@ -5,6 +5,9 @@ const body = document.querySelector('body');
 const computerSide = document.querySelector('.computer-side');
 const playerSide = document.querySelector('.player-side');
 const playerChoice = document.querySelector('.player-choice');
+const computerChoice = document.querySelector('.computer-choice');
+const playerScore = document.querySelector('.player-side .scores');
+const computerScore = document.querySelector('.computer-side .scores');
 
 
 function computerPlay() {
@@ -32,15 +35,21 @@ const game = function(e, rounds = 5) {
   console.log(result);
 
   playerChoice.textContent = "Your choice: " + e.target.className;
-  computerSide.textContent = "Computer has chosen: " + computerSelection;
+  computerChoice.textContent = "Computer has chosen: " + computerSelection;
   if (result === "Player wins!") {
+
     currentPointsPlayer++ ;
+    playerScore.textContent = currentPointsPlayer;
   }
   else {
     currentPointsComp++;
+    console.log(currentPointsComp);
+    computerScore.textContent = currentPointsComp;
   }
 
   console.log("Current Points - Player: " + currentPointsPlayer + " Computer: " + currentPointsComp);
+
+
 
 
 
@@ -71,10 +80,6 @@ const game = function(e, rounds = 5) {
     }
 
 
-
-    currentPointsPlayer = 0;
-    currentPointsComp = 0;
-
     newGameButton = document.createElement('button');
     newGameButton.textContent = 'NEW GAME!';
     body.appendChild(newGameButton);
@@ -96,6 +101,12 @@ const startNewGame = function() {
   playerChoice.textContent = "";
   finalResults = document.querySelector(".final-results");
   body.removeChild(finalResults);
+
+  currentPointsPlayer = 0;
+  currentPointsComp = 0;
+
+  playerScore.textContent = 0;
+  computerScore.textContent = 0;
 }
 
 buttons.forEach(button => {
