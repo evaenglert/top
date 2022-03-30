@@ -9,18 +9,19 @@ const computerChoice = document.querySelector('.computer-choice');
 const playerScore = document.querySelector('.player-side .scores');
 const computerScore = document.querySelector('.computer-side .scores');
 
+const choiceToEmoji = ["👊🏻", "🤚🏻", "✌🏻"];
+const choices = ["rock", "paper", "scissors"];
 
 function computerPlay() {
-  const array = ["Rock", "Paper", "Scissors"];
   const number = Math.floor(Math.random() * 3);
-  return array[number];
+  return choices[number];
 }
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection.toLowerCase() === computerSelection.toLowerCase()) {
     return "It is a tie!";
   }
-  else if ((playerSelection.toLowerCase() === "rock" && computerSelection === "Scissors") || (playerSelection.toLowerCase() === "paper" && computerSelection === "Rock") || (playerSelection.toLowerCase() === "scissors" && computerSelection === "Paper")) {
+  else if ((playerSelection.toLowerCase() === "rock" && computerSelection === "scissors") || (playerSelection.toLowerCase() === "paper" && computerSelection === "rock") || (playerSelection.toLowerCase() === "scissors" && computerSelection === "paper")) {
     return "Player wins!";
   }
   else {
@@ -34,8 +35,12 @@ const game = function(e, rounds = 5) {
 
   console.log(result);
 
-  playerChoice.textContent = "Your choice: " + e.target.className;
-  computerChoice.textContent = "Computer has chosen: " + computerSelection;
+
+  // playerChoice.textContent = "Your choice: " + e.target.className;
+
+  playerChoice.textContent = choiceToEmoji[choices.indexOf(e.target.className)];
+  console.log(e.target.className);
+  computerChoice.textContent = choiceToEmoji[choices.indexOf(computerSelection)];
   if (result === "Player wins!") {
 
     currentPointsPlayer++ ;

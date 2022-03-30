@@ -57,16 +57,27 @@ body {
   width: 100%;
   background-color: rgb(143, 177, 137);
   border-radius: 5px;
+  padding: 10px;
 
   display: flex;
 
+  justify-content: center;
   align-items: center;
+
+  text-align: center;
+  font-size: 42px;
 }
 
 .choice-buttons {
+  width: 100%;
+
   display: flex;
-  align-items: space-between;
   justify-content: space-between;
+}
+
+button {
+  background-color: rgb(108, 134, 103);
+  border-radius: 5px;
 }
 
 
@@ -76,7 +87,6 @@ body {
 
 
 .scores {
-
   height: 50px;
   width: 50px;
   font-size: 40px;
@@ -85,4 +95,22 @@ body {
 
   border: 1px solid black;
   border-radius: 5px;
+}
+
+
+.final-results {
+  height: 30px;
+  width: 500px;
+  margin-bottom: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgb(143, 177, 137);
+  font-size: 20px;
+
+  border-radius: 5px;
+
+
 }
