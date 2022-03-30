@@ -1,0 +1,15 @@
+
+
+.row {
+  display: flex;
+  width: 320;
+  height: 20px;
+
+}
+
+
+.grid {
+  display: flex;
+  width: 20px;
+  border: 1px solid black;
+}
