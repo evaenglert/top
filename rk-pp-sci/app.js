@@ -104,6 +104,7 @@ const startNewGame = function() {
   })
 
   playerChoice.textContent = "";
+  computerChoice.textContent = "";
   finalResults = document.querySelector(".final-results");
   body.removeChild(finalResults);
 

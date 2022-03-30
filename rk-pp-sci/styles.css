@@ -22,8 +22,9 @@ body {
 
 
 .container {
+
   height: 300px;
-  width: 100%;
+  width: 60%;
   display: flex;
   justify-content: space-between;
   align-items: center;
