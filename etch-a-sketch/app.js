@@ -1,8 +1,8 @@
 // create 16 * 16 divs in a grid :)
 
 
-const body = document.querySelector('body');
-console.log(body)
+const outer_grid = document.querySelector('.outer-grid');
+console.log(outer_grid)
 
 
 N = 16
@@ -10,10 +10,9 @@ N = 16
 for (var i = 0; i < N; i++){
   const div_outer = document.createElement('div');
   div_outer.classList.add('row');
-  body.appendChild(div_outer)
+  outer_grid.appendChild(div_outer)
 
-  nodes = body.querySelectorAll('div')
-  console.log(nodes)
+  nodes = outer_grid.querySelectorAll('div')
   const last_div = nodes[nodes.length-1];
 
   for (var j = 0; j < N; j++) {
@@ -23,3 +22,20 @@ for (var i = 0; i < N; i++){
 
   }
 }
+
+const all_grid = document.querySelectorAll('.grid');
+
+for (var i=0; i < all_grid.length; i++) {
+  all_grid[i].addEventListener('mouseenter', (e) => {
+    e.target.classList.add('colored')
+  });
+}
+
+
+const reset_button = document.querySelector('.reset')
+
+reset_button.addEventListener('click', () => {
+  for (var i = 0; i < all_grid.length; i++) {
+    all_grid[i].classList.remove('colored')
+  }
+})
