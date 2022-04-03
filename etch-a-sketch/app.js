@@ -16,11 +16,11 @@ slider_value.innerHTML = slider.value
 enableSlider()
 
 black_button.addEventListener('click', () => {
-  enableDrawing('black')
+  enableDrawing('black');
 })
 
 random_color_button.addEventListener('click', () => {
-  enableDrawing('colorful')
+  enableDrawing('colorful');
 })
 
 
@@ -70,20 +70,36 @@ function createGrid(N, color_option) {
 function enableDrawing(color_option) {
   const all_grid = document.querySelectorAll('.grid');
 
-  // add coloring functionality to each grid
   for (var i = 0; i < all_grid.length; i++) {
-    all_grid[i].addEventListener('mouseenter', (e) => {
-      if (color_option == 'black') {
-        e.target.classList.add('black')
-      }
-      else {
-        var randomColor = Math.floor(Math.random() * 16777215).toString(16);
-        e.target.style.backgroundColor = '#' + randomColor;
-      }
-    });
+    all_grid[i].removeEventListener('mouseenter', draw_black);}
+
+  for (var i = 0; i < all_grid.length; i++) {
+    all_grid[i].removeEventListener('mouseenter', draw_colorful);
   }
 
+  // add coloring functionality to each grid
+  if (color_option == 'black') {
+    for (var i = 0; i < all_grid.length; i++) {
+      all_grid[i].addEventListener('mouseenter', draw_black);
+    }
+  }
+  else {
+    for (var i = 0; i < all_grid.length; i++) {
+      all_grid[i].addEventListener('mouseenter', draw_colorful);
+  }
   add_reset_button(all_grid)
+}}
+
+
+// makes sure that any other drawing option is disabled
+function draw_black(e) {
+
+  e.target.classList.add('black')
+}
+
+function draw_colorful(e) {
+  var randomColor = Math.floor(Math.random() * 16777215).toString(16);
+  e.target.style.backgroundColor = '#' + randomColor;
 }
 
 function enableSlider() {
