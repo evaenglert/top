@@ -6,25 +6,22 @@ const slider = document.querySelector(".slider");
 const slider_value = document.querySelector('.slider-value');
 const black_button = document.querySelector(".option-black")
 const random_color_button = document.querySelector(".option-colorful")
-
-enableDrawing(slider.value)
-
+var drawing_color = 'black';
 
 
-slider_value.innerHTML = slider.value
+
 
 enableSlider()
 
 black_button.addEventListener('click', () => {
-  enableDrawing('black');
+  drawing_color = 'black';
+  enableDrawing(drawing_color);
 })
 
 random_color_button.addEventListener('click', () => {
-  enableDrawing('colorful');
+  drawing_color = 'colorful';
+  enableDrawing(drawing_color);
 })
-
-
-// Update the current slider value (each time you drag the slider handle)
 
 
 
@@ -32,9 +29,10 @@ random_color_button.addEventListener('click', () => {
 
 function add_reset_button(all_grid) {
   reset_button.addEventListener('click', () => {
-    console.log(all_grid)
+
     for (var i = 0; i < all_grid.length; i++) {
-      all_grid[i].classList.remove('black')
+      // all_grid[i].classList.remove('black');
+      all_grid[i].style.backgroundColor = '#FFFFFF'
     }
   })
 }
@@ -94,7 +92,8 @@ function enableDrawing(color_option) {
 // makes sure that any other drawing option is disabled
 function draw_black(e) {
 
-  e.target.classList.add('black')
+  // e.target.classList.add('black')
+  e.target.style.backgroundColor = '#000000';
 }
 
 function draw_colorful(e) {
@@ -103,12 +102,14 @@ function draw_colorful(e) {
 }
 
 function enableSlider() {
-
+  createGrid(slider.value)
+  enableDrawing(drawing_color)
 
   slider.oninput = function () {
     slider_value.innerHTML = this.value;
     N = this.value
 
     createGrid(N)
+    enableDrawing(drawing_color)
   }
 }
