@@ -1,6 +1,7 @@
 const display = document.querySelector('.calculator-display-number');
 const buttons = document.querySelectorAll('.button-to-display');
 const equal_button = document.querySelector('.equal');
+const result_display = document.querySelector('.calc-display-right');
 
 
 // some functions for basic functionality of the calculator
@@ -30,6 +31,12 @@ function operate(operator, a, b) {
 }
 
 const displayNumber = function (e) {
+  if (result_display.textContent != '') {
+    result_display.textContent = '';
+    display.textContent = '';
+
+  }
+
   display.textContent = display.textContent + e.target.textContent
 }
 
@@ -39,12 +46,20 @@ const evalualte = function (e) {
 
   numbers = expression.split(/[/*+-]/g)
 
-  if (numbers.indexOf('') != -1) {
-    display.textContent = 'ERROR'
+  if (numbers.indexOf('') != -1 || numbers.length != all_operators.length+1) {
+    result_display.textContent = 'ERROR'
   }
   else {
-    result = operate(all_operators[0], parseInt(numbers[0]), parseInt(numbers[1]))
-    display.textContent = result;
+    for (let i=0; i < all_operators.length; i++) {
+      if (i == 0) {
+        result = operate(all_operators[i], parseInt(numbers[i]), parseInt(numbers[i+1]))
+      }
+      else {
+        result = operate(all_operators[i], result, parseInt(numbers[i+1]))
+      }
+    }
+
+    result_display.textContent = result;
 
   }
 
