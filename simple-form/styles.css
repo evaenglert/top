@@ -1,0 +1,25 @@
+body {
+  margin: 0px;
+  padding-left: 150px;
+  padding-right: 150px;
+  background-color: black;
+ display: flex;
+}
+
+.side-image {
+  /* width: 30%; */
+  height: 100vh;
+}
+
+.main-body {
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  justify-content: center;
+
+  height: 100vh;
+}
+
+.form {
+  height: 20%;
+}
