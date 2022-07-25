@@ -9,17 +9,43 @@
 </head>
 <body>
   <div class="side-image">
-    <img src=sidebar-pic.jpeg width=100%>
+    <img src=sidebar-pic.jpeg>
   </div>
   <div class="main-body">
     <div class="header">
-      This is not a real online service.You know you need something like
-      this in your life to help you realize your deepest dreams. Sign up now
-      to get started.
+      This is not a real online service! You know you need something like
+      this in your life to help you realize your deepest dreams. <br>
+      Sign up <em>now</em> to get started.
 
-      You know you want to.
+      <p>You <em>know</em> you want to.</p>
     </div>
-    <div class="form"></div>
+    <div class="form">
+      <form action="example.com/path" method="post">
+        <fieldset>
+          <label for="first_name">First Name</label>
+          <input type="text" id="first_name" name="first_name" placeholder="John">
+
+          <label for="last_name">Last Name</label>
+          <input type="text" id="last_name" name="last_name" placeholder="Doe">
+        </fieldset>
+
+        <label for="email">EMAIL</label>
+        <input type="email" id="email"  name="email" placeholder="john.doe@email.com">
+
+        <label for="telephone">TELEPHONE</label>
+        <input type="text" id="telephone" name="telephone">
+
+        <label for="password">PASSWORD</label>
+        <input type="password" id="password" name="password">
+
+        <label for="password">CONFIRM PASSWORD</label>
+        <input type="password" id="password" name="password">
+
+      </form>
+
+
+
+    </div>
     <div class="account-creation">
       <button class="create-account">Create Account</button>
       Already have an account? Log in
