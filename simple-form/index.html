@@ -21,25 +21,44 @@
     </div>
     <div class="form">
       <form action="example.com/path" method="post">
-        <fieldset>
-          <label for="first_name">First Name</label>
-          <input type="text" id="first_name" name="first_name" placeholder="John">
+        <legend>Let's do this!</legend>
 
-          <label for="last_name">Last Name</label>
-          <input type="text" id="last_name" name="last_name" placeholder="Doe">
+          <fieldset>
+            <div id="contact-first-name">
+              <label for="first_name">FIRST NAME</label>
+              <input type="text" id="first_name" name="first_name" placeholder="John">
+            </div>
+
+          <div id="contact-last-name">
+            <label for="last_name">LAST NAME</label>
+            <input type="text" id="last_name" name="last_name" placeholder="Doe">
+          </div>
         </fieldset>
 
-        <label for="email">EMAIL</label>
-        <input type="email" id="email"  name="email" placeholder="john.doe@email.com">
 
-        <label for="telephone">TELEPHONE</label>
-        <input type="text" id="telephone" name="telephone">
+        <fieldset>
 
-        <label for="password">PASSWORD</label>
-        <input type="password" id="password" name="password">
+          <div id="contact-email">
+            <label for="email">EMAIL</label>
+            <input type="email" id="email"  name="email" placeholder="john.doe@email.com">
+          </div>
 
-        <label for="password">CONFIRM PASSWORD</label>
-        <input type="password" id="password" name="password">
+          <div id="contact-telephone">
+            <label for="telephone">TELEPHONE</label>
+            <input type="text" id="telephone" name="telephone">
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <div id="contact-password">
+            <label for="password">PASSWORD</label>
+            <input type="password" id="password" name="password">
+          </div>
+          <div id="conctact-password-confirm">
+            <label for="password">CONFIRM PASSWORD</label>
+            <input type="password" id="password" name="password">
+          </div>
+        </fieldset>
 
       </form>
 
