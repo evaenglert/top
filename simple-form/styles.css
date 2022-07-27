@@ -1,7 +1,7 @@
 body {
   margin: 0px;
-  padding-left: 150px;
-  padding-right: 150px;
+  padding-left: 250px;
+  padding-right: 250px;
   background-color: black;
   display: flex;
 
@@ -19,7 +19,7 @@ img {
 }
 
 .main-body {
-  width: 50%;
+  width: 80%;
 
 
   display: flex;
@@ -30,11 +30,12 @@ img {
   height: 100vh;
 
   font-family: Arial, Helvetica, Sans-serif;
+  overflow: hidden;
 }
 
 .header {
 
-  padding: 30px 100px 30px 50px;
+  padding: 0px 100px 30px 50px;
 
   font-size: 23px;
   align-items: left;
@@ -45,13 +46,14 @@ img {
 
 
 .form {
-  padding: 30px 100px 30px 50px;
-  height: 30%;
+  padding: 0px 100px 0px 50px;
+  height: 25%;
   width: 100%;
 
-  -webkit-box-shadow: 0 8px 6px -6px black;
-  -moz-box-shadow: 0 8px 6px -6px black;
-  box-shadow: 0 8px 6px -6px black;
+  -webkit-box-shadow: 0 8px 6px -6px rgb(84, 87, 6);
+  -moz-box-shadow: 0 8px 6px -6px rgb(138, 149, 81);
+  box-shadow: 0 8px 6px -6px rgb(171, 158, 77);
+
 
 }
 
@@ -62,6 +64,28 @@ img {
 label, input {
   font-family: inherit;
   font-size: 100%;
+}
+
+label {
+  font-size: 80%;
+  padding: 3px;
+}
+
+input {
+  width: 250px;
+  height: 22px;
+  border: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  outline: none !important;
+  border-color: #E5E7EB;
+
+
+}
+
+input:focus {
+  outline: none !important;
+  border-color: rgb(107, 107, 194);
 }
 
 legend {
@@ -81,4 +105,27 @@ fieldset {
 #contact-first-name, #contact-last-name, #contact-email, #contact-telephone, #contact-password, #conctact-password-confirm {
   display: flex;
   flex-direction: column;
+}
+
+.account-creation {
+  font-size: 18px;
+}
+
+.create-account {
+  border: 0px;
+  border-radius: 5px;
+  background-color: #596D48;
+  color: white;
+  font-size: inherit;
+  font-family: inherit;
+  height: 50px;
+  width: 250px;
+}
+
+
+
+.account-creation>p>a {
+  color: #596D48;
+  font-weight: bold;
+  text-decoration: none;
 }
