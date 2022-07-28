@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'OdinFont';
+  /*a name to be used later*/
+  src: url('Norse-Bold.otf');
+  /*URL to font*/
+}
+
 body {
   margin: 0px;
   padding-left: 250px;
@@ -11,9 +18,38 @@ body {
 .side-image {
   height: 100vh;
   overflow: hidden;
+  position: relative;
 }
 
-img {
+.image-heading {
+  padding: 20px;
+  position: absolute;
+  top: 15rem;
+  opacity: 0.6;
+  width: 100%;
+  background-color: black;
+
+  display: flex;
+  justify-content: center;
+
+}
+
+.logo>img {
+  height: 100px;
+}
+
+.image-text {
+  padding: 10px 0px 0px 0px;
+  opacity: 1;
+  color: white;
+    font-size: 70px;
+
+  line-height: 80px;
+  font-family: 'OdinFont';
+  text-align: center;
+}
+
+.side-image>img {
   height: 100%;
   object-fit: cover;
 }
